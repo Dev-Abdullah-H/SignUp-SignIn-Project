@@ -1,3 +1,7 @@
 <template>
-    <h1>helllo SignIn</h1>
+    <SignIn />
 </template>
+
+<script setup>
+import SignIn from '@/components/SignIn.vue';
+</script>

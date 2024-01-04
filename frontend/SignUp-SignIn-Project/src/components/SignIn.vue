@@ -1,35 +1,30 @@
 <template>
-  <main>
-    <div class="container">
-      <div>
-        <img src="../assets/s.jpg">
-      </div>
-      <div class="con-item">
-        <div class="first-portion">
-            <input type="text" placeholder="First Name">
-            <input type="text" placeholder="Last Name">
-            <input type="text" placeholder="Age">
+    <main>
+      <div class="container">
+        <div>
+          <img src="../assets/s.jpg">
         </div>
-        <div class="second-portion">
-            <input type="text" placeholder="Email ">
-            <input type="text" placeholder="Password">
-            <input type="text" placeholder="Confirm Password">
+        <div class="con-item">
+          <div class="second-portion">
+              <input type="text" placeholder="Email ">
+              <input type="text" placeholder="Password">
+              <input type="text" placeholder="Confirm Password">
+          </div>
+        </div>
+        <div class="btns">
+          <button>Log In</button>
+          <button @click="redirect">Sign Up</button>
         </div>
       </div>
-      <div class="btns">
-        <button>Sign Up</button>
-        <button @click="redirect">Log In</button>
-      </div>
-    </div>
-  </main>
-</template>
-
+    </main>
+  </template>
 <script setup>
 import router from '@/router';
 
 const redirect = () => {
-  router.push('/signin')
+  router.push('/signup')
 }
+
 
 </script>
 
