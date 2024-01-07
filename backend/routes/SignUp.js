@@ -19,6 +19,21 @@ router.post('/new', async(req, res) => {
     res.json(savedSignUp)
 })
 
+// Login 
+router.post('/login', async (req, res) => {
+    const { email, password } = req.body
+    const user = await SignUp.findOne({email, password})
+    if (user) {
+        res.json({ message: "User logged In" })
+    }else {
+        res.status(401).json({ message:'User not LoggedIn' })
+    }
+})
+
+
+
+
+
 module.exports = router
 
 

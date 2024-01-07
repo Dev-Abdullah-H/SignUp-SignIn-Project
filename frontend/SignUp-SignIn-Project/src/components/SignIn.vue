@@ -6,25 +6,45 @@
         </div>
         <div class="con-item">
           <div class="second-portion">
-              <input type="text" placeholder="Email ">
-              <input type="text" placeholder="Password">
-              <input type="text" placeholder="Confirm Password">
+              <input v-model="email" type="text" placeholder="Email ">
+              <input v-model="password" type="text" placeholder="Password">
           </div>
         </div>
         <div class="btns">
-          <button>Log In</button>
+          <button @click="login">Log In</button>
           <button @click="redirect">Sign Up</button>
         </div>
       </div>
     </main>
   </template>
 <script setup>
+import { ref } from 'vue';
 import router from '@/router';
+import axios from 'axios';
 
 const redirect = () => {
   router.push('/signup')
 }
 
+// Declare Variables
+const email = ref('')
+const password = ref('')
+// Login
+
+const login = async () => {
+  try {
+    const response = await axios.post('http://localhost:3000/api/login', {
+       email: email.value,
+       password: password.value
+      })
+    console.log(response.status);
+    if (response.status == 200 ){
+      router.push('/')
+    }
+  } catch(e) {
+    console.log(e);
+  }
+}
 
 </script>
 
