@@ -28,4 +28,7 @@ app.get("/", (req, res) => {
 });
 
 const SignUpRoute = require('./routes/SignUp')
-app.use('/api', SignUpRoute)
+app.use('/api1', SignUpRoute)
+
+const TodoRoute = require('./routes/Todo')
+app.use('/api2', TodoRoute)
