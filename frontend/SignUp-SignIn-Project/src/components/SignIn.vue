@@ -33,13 +33,13 @@ const password = ref('')
 
 const login = async () => {
   try {
-    const response = await axios.post('http://localhost:3000/api/login', {
+    const response = await axios.post('http://localhost:3000/api1/login', {
        email: email.value,
        password: password.value
       })
     console.log(response.status);
     if (response.status == 200 ){
-      router.push('/')
+      router.push('/todo')
     }
   } catch(e) {
     console.log(e);

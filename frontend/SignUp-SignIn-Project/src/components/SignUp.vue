@@ -59,7 +59,7 @@ const cp = computed(() => {
 const dat = async () => {
   if (data.password == data.cpassword) {
     try {
-      const response = await axios.post("http://localhost:3000/api/new", data);
+      const response = await axios.post("http://localhost:3000/api1/new", data);
       console.log(response.data.message); // Log the response message
     } catch (error) {
       console.error("Error:", error);
